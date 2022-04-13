@@ -1,11 +1,16 @@
-const spinner = () => {
-  let positions = ['\r| ', '\r/ ', '\r- ', '\r\\ ', '\r| ', '\r/ ', '\r- ', '\r\\ ']
+const spinner = (numOfRuns) => {
+  let positions = ['\r| ', '\r/ ', '\r- ', '\r\\ '];
 
-  for (let i = 0; i < 8; i++) {
+  for (let n = 0; n < numOfRuns; n++)
     setTimeout(() => {
-      process.stdout.write(positions[i]);
-    }, 100 + i * 200)
-  }
-}
+      for (let i = 0; i < positions.length; i++) {
+        setTimeout(() => {
+          process.stdout.write(positions[i]);
+        }, 200 + i * 200);
+      }
+    }, n * 800);
+};
 
-spinner();
+spinner(5);
+
+
