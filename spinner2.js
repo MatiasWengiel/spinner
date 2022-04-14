@@ -1,7 +1,7 @@
 const spinner = (numOfRuns) => {
   let positions = ['\r| ', '\r/ ', '\r- ', '\r\\ '];
 
-  for (let n = 0; n < numOfRuns; n++)
+  for (let n = 0; n < numOfRuns; n++) {
     setTimeout(() => {
       for (let i = 0; i < positions.length; i++) {
         setTimeout(() => {
@@ -9,6 +9,7 @@ const spinner = (numOfRuns) => {
         }, 200 + i * 200);
       }
     }, n * 800);
+  }
 };
 
 spinner(5);
